@@ -1,19 +1,34 @@
+@import url(https://fonts.googleapis.com/css?family=Neucha:regular);
+
+body {
+    font-family: 'Neucha';
+}
+
 .slider {
     min-height: 100vh;
     overflow: hidden;
     display: flex;
+    flex-direction: column;
+    gap: 2rem;
     justify-content: center;
     align-items: center;
     padding: 0 20px;
-    background-color: yellow;
+    background: linear-gradient(0deg, rgba(213,250,110,1) 0%, rgba(250,248,163,1) 61%);
+}
+
+.slider h1 {
+    font-size: 3rem;
+    color: rgb(251,56,56);
 }
 
 .slider__container {
-    background-color: rgb(201, 201, 159);
+    background: linear-gradient(0deg, rgba(213,250,110,1) 0%, rgba(163,250,192,1) 61%);
+    box-shadow: 10px 6px 20px 6px rgba(34, 60, 80, 0.32);
     padding: 3rem;
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 48em) {
     .slider__container {
         padding: 1rem;
     }
@@ -39,24 +54,11 @@
     justify-content: center;
 }
 
-.slider__slide_name {
-    margin-top: 1rem;
-    position: relative;
-    z-index: 10;
-    color: #000;
-    background: #fff;
-}
-
 .slider__slide img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
 }
-
-/* @media (max-width: 768px) {
-    .slider__slide img {
-    }
-} */
 
 .slider__navigation {
     display: flex;
@@ -66,8 +68,8 @@
 }
 
 .slider__bar {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     border: 2px solid #000;
     cursor: pointer;
@@ -76,6 +78,10 @@
 
 .slider__bar:hover {
     background: bisque;
+}
+
+.slider__bar:active {
+    border: 2px solid rgb(247, 133, 80);
 }
 
 input[name="nav"] {
@@ -108,7 +114,8 @@ input[name="nav"] {
 #nav3:checked ~ .slider__bottom .slider__navigation #slider__bar3,
 #nav4:checked ~ .slider__bottom .slider__navigation #slider__bar4,
 #nav5:checked ~ .slider__bottom .slider__navigation #slider__bar5 {
-    background-color: aquamarine;
+    background-color: rgb(124, 255, 36);
+    border: 2px solid rgb(117, 111, 50);
 }
 
 .slider__bottom {
@@ -119,16 +126,18 @@ input[name="nav"] {
     justify-content: space-between;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
     .slider__bottom {
         flex-direction: column;
     }
     .slider__text {
         order: 1;
-    }
-    .slider__text {
         padding-bottom: 20px;
     }
+}
+
+.slider__text {
+    white-space: nowrap;
 }
 
 
@@ -148,9 +157,10 @@ input[name="nav"] {
     position: absolute;
     transform: translateY(-50%);
     opacity: 0;
+    font-size: 1.5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
     .slider__text_1,
     .slider__text_2,
     .slider__text_3,
