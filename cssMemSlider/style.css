@@ -12,9 +12,10 @@ body {
     gap: 2rem;
     justify-content: center;
     align-items: center;
-    padding: 0 20px;
+    padding: 1rem;
     background: linear-gradient(0deg, rgba(213,250,110,1) 0%, rgba(250,248,163,1) 61%);
 }
+
 
 .slider h1 {
     font-size: 3rem;
@@ -31,6 +32,9 @@ body {
 @media (max-width: 48em) {
     .slider__container {
         padding: 1rem;
+    }
+    .slider {
+        padding: 0.5rem;
     }
 }
 
@@ -68,20 +72,33 @@ body {
 }
 
 .slider__bar {
-    width: 20px;
-    height: 20px;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.slider__button {
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
     border: 2px solid #000;
-    cursor: pointer;
     transition: 0.3s;
 }
 
-.slider__bar:hover {
-    background: bisque;
+.slider__bar:hover .slider__button {
+    background: rgb(101, 251, 56);
+    
 }
 
-.slider__bar:active {
-    border: 2px solid rgb(247, 133, 80);
+.slider__bar:active .slider__button {
+    background: rgb(252, 108, 108);
+    border: 3px solid rgb(247, 80, 80);
 }
 
 input[name="nav"] {
@@ -109,11 +126,10 @@ input[name="nav"] {
     margin-left: -80%;
 }
 
-#nav1:checked ~ .slider__bottom .slider__navigation #slider__bar1,
-#nav2:checked ~ .slider__bottom .slider__navigation #slider__bar2,
-#nav3:checked ~ .slider__bottom .slider__navigation #slider__bar3,
-#nav4:checked ~ .slider__bottom .slider__navigation #slider__bar4,
-#nav5:checked ~ .slider__bottom .slider__navigation #slider__bar5 {
+#nav1:checked ~ .slider__bottom .slider__navigation #slider__bar1 .slider__button,
+#nav2:checked ~ .slider__bottom .slider__navigation #slider__bar2 .slider__button,
+#nav3:checked ~ .slider__bottom .slider__navigation #slider__bar3 .slider__button,
+#nav4:checked ~ .slider__bottom .slider__navigation #slider__bar4 .slider__button {
     background-color: rgb(124, 255, 36);
     border: 2px solid rgb(117, 111, 50);
 }
